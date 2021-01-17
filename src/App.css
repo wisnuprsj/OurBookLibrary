@@ -203,6 +203,51 @@
   }
 }
 
+@media only screen and (min-width: 375px) and (max-width: 414px) {
+  #list-th .card .row .wrapthumbnail,
+  #list-th .card .row .wrapdescription {
+    margin: 0;
+  }
+
+  .cover img {
+    height: 80%;
+    width: 200px;
+  }
+
+  #list-th .card .row .wrapthumbnail .cover {
+    width: 200px;
+    height: 350px;
+    border: none;
+  }
+
+  #list-th .card .row .wrapdescription {
+    padding-left: 0;
+  }
+
+  #list-th .card .row .wrapdescription h4 {
+    font-size: 1rem;
+  }
+
+  #list-th .card .row .wrapdescription h6 {
+    font-size: 0.75rem;
+  }
+
+  #list-th .card .row .wrapdescription p {
+    font-size: 0.75rem;
+  }
+
+  #list-th .card .row .wrapthumbnail {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  #list-th .card .row {
+    margin: 0;
+    width: 404px;
+    height: 280px;
+  }
+}
+
 @media only screen and (max-width: 375px) {
   :root {
     --columns: 1;
@@ -210,20 +255,22 @@
 
   .cover img {
     height: 100%;
-    width: 100%;
+    width: 311px;
   }
 
-  .cover {
-    border: 2px solid gray;
+  #list-th .card .row {
+    width: 100%;
     height: 100%;
-    width: 80%;
-    overflow: hidden;
   }
 
-  .wrapthumbnail {
+  #list-th .card .row .wrapthumbnail .cover {
     height: 100%;
-    width: 100%;
+    width: 311px;
     padding: 0;
+  }
+
+  #list-th .card .row .wrapthumbnail {
+    width: 100%;
   }
 
   .wrapdescription {
