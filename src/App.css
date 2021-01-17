@@ -210,18 +210,19 @@
   }
 
   .cover img {
-    height: 80%;
+    height: 100%;
     width: 200px;
   }
 
   #list-th .card .row .wrapthumbnail .cover {
     width: 200px;
-    height: 350px;
+    height: 280px;
     border: none;
   }
 
   #list-th .card .row .wrapdescription {
     padding-left: 0;
+    height: 280px;
   }
 
   #list-th .card .row .wrapdescription h4 {
@@ -239,6 +240,7 @@
   #list-th .card .row .wrapthumbnail {
     padding-right: 0;
     padding-left: 0;
+    height: 280px;
   }
 
   #list-th .card .row {
