@@ -248,6 +248,14 @@
     width: 404px;
     height: 280px;
   }
+
+  .bookShelf {
+    padding: 20px;
+  }
+
+  .bookShelf .bookItem {
+    width: 190px;
+  }
 }
 
 @media only screen and (max-width: 375px) {
