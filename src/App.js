@@ -18,10 +18,11 @@ require("dotenv").config();
 
 function App() {
   const [bcTitle, setBcTitle] = useState("");
+  const [navActive, setNavActive] = useState("home");
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar active={navActive} />
       <Breadcrumbs title={bcTitle} />
       <ErrorBoundary>
         <Router>
@@ -31,6 +32,7 @@ function App() {
               path="/"
               render={() => {
                 setBcTitle("Home");
+                setNavActive("home");
                 return <Home />;
               }}
             />
@@ -39,6 +41,7 @@ function App() {
               path="/Home"
               render={() => {
                 setBcTitle("Home");
+                setNavActive("home");
                 return <Home />;
               }}
             />
@@ -47,6 +50,7 @@ function App() {
               path="/AddBooks"
               render={() => {
                 setBcTitle("Add Books to Collection");
+                setNavActive("addbooks");
                 return <AddBooks />;
               }}
             />
@@ -55,6 +59,7 @@ function App() {
               path="/Collection"
               render={() => {
                 setBcTitle("Collection");
+                setNavActive("collection");
                 return <Collection />;
               }}
             />
@@ -63,6 +68,7 @@ function App() {
               path="/Monitoring"
               render={() => {
                 setBcTitle("Monitoring");
+                setNavActive("monitoring");
                 return <Monitoring />;
               }}
             />

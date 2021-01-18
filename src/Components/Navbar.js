@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-function Navbar() {
+function Navbar(props) {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
   return (
     <div id="navigation-bar">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <a className="navbar-brand" href="/Home">
           T&W Library
         </a>
@@ -27,17 +27,36 @@ function Navbar() {
           id="navbarNavAltMarkup"
         >
           <div className="navbar-nav">
-            <a className="nav-link active" aria-current="page" href="/Home">
+            <a
+              className={`nav-link ${props.active === "home" ? "active" : ""}`}
+              aria-current="page"
+              href="/Home"
+            >
               Home
             </a>
-            <a className="nav-link" href="/AddBooks">
+            <a
+              className={`nav-link ${
+                props.active === "addbooks" ? "active" : ""
+              }`}
+              href="/AddBooks"
+            >
               Add Books
             </a>
-            <a className="nav-link" href="/Collection">
+            <a
+              className={`nav-link ${
+                props.active === "collection" ? "active" : ""
+              }`}
+              href="/Collection"
+            >
               Collection
             </a>
 
-            <a className="nav-link" href="/Monitoring">
+            <a
+              className={`nav-link ${
+                props.active === "monitoring" ? "active" : ""
+              }`}
+              href="/Monitoring"
+            >
               Monitoring
             </a>
           </div>

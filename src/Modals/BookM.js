@@ -99,54 +99,54 @@ const BookM = (props) => {
         <Modal.Title>Book Information</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div className="global-wrapper-modal">
-          <div className="left-wrapper">
-            {isLoading ? (
-              <ReactBootstrap.Spinner className="spinner" animation="border" />
-            ) : (
+        {isLoading ? (
+          <ReactBootstrap.Spinner className="spinner" animation="border" />
+        ) : (
+          <div className="global-wrapper-modal">
+            <div className="left-wrapper">
               <img src={book.imageLinks[0].thumbnail} alt="" />
-            )}
-          </div>
-          <div className="right-wrapper">
-            <button
-              type="button"
-              className="btn btn-success"
-              onClick={handleAddReview}
-            >
-              Add Review
-            </button>
-            {isLoading ? (
-              ""
-            ) : book.reviews ? (
-              <button type="button" className="btn btn-info">
-                Book Review
-              </button>
-            ) : (
-              ""
-            )}
-            {changePossesion ? (
-              <select
-                className="form-control reviewer"
-                name="reviewer"
-                onChange={handlePossesion}
-                value={possession}
-              >
-                <option></option>
-                {listName.map((item, index) => {
-                  return <option key={index}>{item.fullName}</option>;
-                })}
-              </select>
-            ) : (
+            </div>
+            <div className="right-wrapper">
               <button
                 type="button"
-                className="btn btn-primary"
-                onClick={handleChangePossesion}
+                className="btn btn-success"
+                onClick={handleAddReview}
               >
-                Change Possesion
+                Add Review
               </button>
-            )}
+              {book.reviews ? (
+                <button type="button" className="btn btn-info">
+                  Book Review
+                </button>
+              ) : (
+                ""
+              )}
+              {changePossesion ? (
+                <select
+                  className="form-control reviewer"
+                  name="reviewer"
+                  onChange={handlePossesion}
+                  value={possession}
+                >
+                  <option></option>
+                  {listName.map((item, index) => {
+                    return <option key={index}>{item.fullName}</option>;
+                  })}
+                </select>
+              ) : (
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleChangePossesion}
+                >
+                  Change Possesion
+                </button>
+              )}
+            </div>
+
+            {/* cek */}
           </div>
-        </div>
+        )}
         {isLoading ? (
           ""
         ) : (
