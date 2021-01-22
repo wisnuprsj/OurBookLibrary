@@ -49,7 +49,9 @@ function AddBooks() {
         console.log(err);
         setHandleError(err);
       });
-    setListIdCollection(listId);
+    if (listId) {
+      setListIdCollection(listId);
+    }
   };
 
   const handleEnter = (e) => {
@@ -98,7 +100,9 @@ function AddBooks() {
     const uri = `${window.env.REACT_APP_BOOK_API}/getAllUser`;
     const res = await fetch(uri).then((response) => response.json());
     const lstUser = res.data;
-    setListName(lstUser);
+    if (lstUser) {
+      setListName(lstUser);
+    }
   };
 
   return (

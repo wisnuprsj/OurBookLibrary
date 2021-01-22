@@ -48,7 +48,8 @@
       "REACT_APP_BOOK_API",
       "REACT_APP_GOOGLE_KEY",
       "REACT_APP_GOOGLE_API",
-      "REACT_APP_BOOK_DEV"
+      "REACT_APP_BOOK_DEV",
+      "REACT_APP_BOOK_DEV_LOCAL"
     ]
   }
 }

@@ -300,6 +300,7 @@
   }
   .global-wrapper-modal {
     display: block;
+    padding: 10px;
   }
 
   .global-wrapper-modal .left-wrapper {
@@ -310,5 +311,9 @@
   .global-wrapper-modal .left-wrapper img {
     height: 220px;
     width: 150px;
+  }
+
+  .global-wrapper-modal .right-wrapper button {
+    margin-bottom: 5px;
   }
 }
