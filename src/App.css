@@ -206,7 +206,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 375px) and (max-width: 414px) {
+@media only screen and (min-width: 375px) and (max-width: 415px) {
   #list-th .card .row .wrapthumbnail,
   #list-th .card .row .wrapdescription {
     margin: 0;
