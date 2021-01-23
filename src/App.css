@@ -259,6 +259,16 @@ body {
   .bookShelf .bookItem {
     width: 190px;
   }
+
+  #stateAll table thead tr th:nth-child(3),
+  #stateAll table thead tr th:nth-child(6) {
+    display: none;
+  }
+
+  #stateAll table tbody tr td:nth-child(3),
+  #stateAll table tbody tr td:nth-child(6) {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 375px) {
