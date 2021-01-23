@@ -343,3 +343,78 @@ body {
     display: none;
   }
 }
+
+@media only screen and (max-width: 282px) {
+  :root {
+    --columns: 1;
+  }
+
+  .cover img {
+    height: 100%;
+    width: 311px;
+  }
+
+  #list-th .card .row {
+    width: 100%;
+    height: 100%;
+  }
+
+  #list-th .card .row .wrapthumbnail .cover {
+    height: 100%;
+    width: 311px;
+    padding: 0;
+  }
+
+  #list-th .card .row .wrapthumbnail {
+    width: 100%;
+  }
+
+  .wrapdescription {
+    display: none;
+  }
+
+  .bookItem {
+    margin: 0;
+    height: 300px;
+  }
+
+  .bookShelf {
+    text-align: center;
+    padding: 90px;
+  }
+
+  .bookShelf li img {
+    width: 100%;
+    height: 300px;
+  }
+  .global-wrapper-modal {
+    display: block;
+    padding: 10px;
+  }
+
+  .global-wrapper-modal .left-wrapper {
+    text-align: center;
+    height: 220px;
+  }
+
+  .global-wrapper-modal .left-wrapper img {
+    height: 220px;
+    width: 150px;
+  }
+
+  .global-wrapper-modal .right-wrapper button {
+    margin-bottom: 5px;
+  }
+
+  #stateAll table thead tr th:nth-child(2),
+  #stateAll table thead tr th:nth-child(3),
+  #stateAll table thead tr th:nth-child(6) {
+    display: none;
+  }
+
+  #stateAll table tbody tr td:nth-child(2),
+  #stateAll table tbody tr td:nth-child(3),
+  #stateAll table tbody tr td:nth-child(6) {
+    display: none;
+  }
+}
