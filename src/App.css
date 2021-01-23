@@ -271,7 +271,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media (min-width: 282px) and (max-width: 375px) {
   :root {
     --columns: 1;
   }
