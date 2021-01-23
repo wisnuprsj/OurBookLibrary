@@ -2,8 +2,7 @@ import { Modal, Button } from "react-bootstrap";
 import React, { useState } from "react";
 
 function AddbookM(props) {
-  const name = props.listposession ? props.listposession[0].fullName : [];
-  console.log(props.listposession);
+  const name = props.listposession[0] ? props.listposession[0].fullName : [];
   const [possession, setPossession] = useState(name);
   const [buyDate, setBuyDate] = useState(new Date().toISOString().slice(0, 10));
   const [location, setLocation] = useState("");
