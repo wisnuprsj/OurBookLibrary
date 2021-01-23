@@ -2,11 +2,13 @@ import { Modal, Button } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import AddReviewM from "../Modals/AddReviewM";
+import ReviewM from "../Modals/ReviewM";
 
 const BookM = (props) => {
   const [book, setBook] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [modalShow, setModalShow] = useState(false);
+  const [modalReview, setModalReview] = useState(false);
   const [changePossesion, setChangePossesion] = useState(false);
   const [listName, setListName] = useState([]);
   const [possession, setPossesion] = useState("");
@@ -88,6 +90,10 @@ const BookM = (props) => {
     props.onHide();
   };
 
+  const handleReview = (event) => {
+    setModalReview(true);
+  };
+
   return (
     <Modal
       {...props}
@@ -115,7 +121,11 @@ const BookM = (props) => {
                 Add Review
               </button>
               {book.reviews ? (
-                <button type="button" className="btn btn-info">
+                <button
+                  type="button"
+                  className="btn btn-info"
+                  onClick={handleReview}
+                >
                   Book Review
                 </button>
               ) : (
@@ -177,6 +187,14 @@ const BookM = (props) => {
           if (save) {
             props.onHide();
           }
+        }}
+      />
+      <ReviewM
+        id={props.id}
+        book={book}
+        show={modalReview}
+        onHide={() => {
+          setModalReview(false);
         }}
       />
     </Modal>

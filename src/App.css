@@ -179,6 +179,64 @@ body {
   vertical-align: middle;
 }
 
+/* RATING */
+
+.rating-wrapper {
+  text-align: center;
+  height: 75px;
+}
+
+.rating-wrapper label {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+}
+
+.rating-wrapper label:before {
+  content: "\2605";
+  position: absolute;
+  font-size: 50px;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 40px;
+  border: black 2px;
+  color: #ddd;
+}
+
+.rating-wrapper label:after {
+  content: "\2605";
+  position: absolute;
+  font-size: 50px;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 40px;
+  color: #ffe227;
+  opacity: 0;
+}
+
+.rating-wrapper input {
+  display: none;
+}
+
+.rating-wrapper {
+  direction: rtl;
+}
+
+.rating-wrapper label:hover:after,
+.rating-wrapper label:hover ~ label:after,
+.rating-wrapper input:checked ~ label:after {
+  opacity: 1;
+}
+
+.custom-radio {
+  display: inline-block;
+}
+
 @media only screen and (min-width: 1024px) {
   :root {
     --columns: 7;

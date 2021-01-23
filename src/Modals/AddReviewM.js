@@ -6,6 +6,7 @@ const AddReviewM = (props) => {
   const [listName, setListName] = useState([]);
   const [reviewer, setReviewer] = useState("");
   const [review, setReview] = useState("");
+  const [rate, setRate] = useState(0);
 
   useEffect(() => {
     getAllUser();
@@ -51,6 +52,7 @@ const AddReviewM = (props) => {
         reviews: {
           review: review,
           reviewer: reviewer,
+          rate: rate,
         },
       }), // body data type must match "Content-Type" header
     });
@@ -93,6 +95,69 @@ const AddReviewM = (props) => {
               return <option key={index}>{item.fullName}</option>;
             })}
           </select>
+          <label>Rate Your Book : </label>
+          <div className="rating-wrapper">
+            {/* <div class="custom-control custom-radio"> */}
+            <input
+              type="radio"
+              id="customRadio1"
+              name="customRadio"
+              class="custom-control-input"
+              onClick={() => {
+                setRate(1);
+              }}
+            />
+            <label class="custom-control-label" for="customRadio1"></label>
+            {/* </div> */}
+            {/* <div class="custom-control custom-radio"> */}
+            <input
+              type="radio"
+              id="customRadio2"
+              name="customRadio"
+              class="custom-control-input"
+              onClick={() => {
+                setRate(2);
+              }}
+            />
+            <label class="custom-control-label" for="customRadio2"></label>
+            {/* </div> */}
+            {/* <div class="custom-control custom-radio"> */}
+            <input
+              type="radio"
+              id="customRadio3"
+              name="customRadio"
+              class="custom-control-input"
+              onClick={() => {
+                setRate(3);
+              }}
+            />
+            <label class="custom-control-label" for="customRadio3"></label>
+            {/* </div> */}
+            {/* <div class="custom-control custom-radio"> */}
+            <input
+              type="radio"
+              id="customRadio4"
+              name="customRadio"
+              class="custom-control-input"
+              onClick={() => {
+                setRate(4);
+              }}
+            />
+            <label class="custom-control-label" for="customRadio4"></label>
+            {/* </div> */}
+            {/* <div class="custom-control custom-radio"> */}
+            <input
+              type="radio"
+              id="customRadio5"
+              name="customRadio"
+              class="custom-control-input"
+              onClick={() => {
+                setRate(5);
+              }}
+            />
+            <label class="custom-control-label" for="customRadio5"></label>
+            {/* </div> */}
+          </div>
         </div>
       </Modal.Body>
       <Modal.Footer>
