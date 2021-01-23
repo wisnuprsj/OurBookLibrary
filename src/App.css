@@ -322,4 +322,14 @@ body {
   .global-wrapper-modal .right-wrapper button {
     margin-bottom: 5px;
   }
+
+  #stateAll table thead tr th:nth-child(3),
+  #stateAll table thead tr th:nth-child(6) {
+    display: none;
+  }
+
+  #stateAll table tbody tr td:nth-child(3),
+  #stateAll table tbody tr td:nth-child(6) {
+    display: none;
+  }
 }
