@@ -104,7 +104,7 @@ const AddReviewM = (props) => {
               name="customRadio"
               class="custom-control-input"
               onClick={() => {
-                setRate(1);
+                setRate(5);
               }}
             />
             <label class="custom-control-label" for="customRadio1"></label>
@@ -116,7 +116,7 @@ const AddReviewM = (props) => {
               name="customRadio"
               class="custom-control-input"
               onClick={() => {
-                setRate(2);
+                setRate(4);
               }}
             />
             <label class="custom-control-label" for="customRadio2"></label>
@@ -140,7 +140,7 @@ const AddReviewM = (props) => {
               name="customRadio"
               class="custom-control-input"
               onClick={() => {
-                setRate(4);
+                setRate(2);
               }}
             />
             <label class="custom-control-label" for="customRadio4"></label>
@@ -152,7 +152,7 @@ const AddReviewM = (props) => {
               name="customRadio"
               class="custom-control-input"
               onClick={() => {
-                setRate(5);
+                setRate(1);
               }}
             />
             <label class="custom-control-label" for="customRadio5"></label>
