@@ -17,7 +17,7 @@ const AddReviewM = (props) => {
     const res = await fetch(uri).then((response) => response.json());
     const lstUser = res.data;
     setListName(lstUser);
-    setReviewer(lstUser[0]);
+    setReviewer(lstUser[0].fullName);
   };
 
   const handleChangeReview = (event) => {
