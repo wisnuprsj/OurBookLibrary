@@ -1,19 +1,40 @@
-import { Modal } from "react-bootstrap";
-import React, { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
+import React, { useState } from "react";
 
 const Reviews = (props) => {
+  const [stars, setStars] = useState([1, 2, 3, 4, 5]);
+
   return (
-    <Card style={{ width: "18rem" }}>
-      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-      <Card.Body>
-        <Card.Title>Review</Card.Title>
-        <Card.Text>
-          <h5>{props.name}</h5>
-          <p>{props.text}</p>
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <div className="review-container">
+      <div className="review">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Reviewer :</th>
+              <th>{props.name}</th>
+              <th>Rating : </th>
+              <td>
+                {stars.map((star, index) => {
+                  if (star <= Number(props.rate)) {
+                    return (
+                      <span
+                        key={index}
+                        className="fas fa-star checked fa-lg"
+                      ></span>
+                    );
+                  }
+                  return null;
+                })}
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colSpan="4">{props.review}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 

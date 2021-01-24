@@ -5,17 +5,34 @@ import Reviews from "../Components/Reviews";
 
 const ReviewM = (props) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [book, setBook] = useState({});
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    if (props.book) {
-      initializeModal();
-    }
+    getBook(props.id);
   }, []);
 
-  const initializeModal = async () => {
-    await setBook(props.book);
-    await setIsLoading(true);
+  const getBook = async (id) => {
+    const uri = `${window.env.REACT_APP_BOOK_API}/getBook`;
+    const response = await fetch(uri, {
+      method: "POST",
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify({
+        id,
+      }), // body data type must match "Content-Type" header
+    });
+    let data = await response.json();
+    if (data[0].reviews) {
+      await setReviews(data[0].reviews);
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -34,11 +51,17 @@ const ReviewM = (props) => {
         <div className="all-review">
           {isLoading ? (
             <ReactBootstrap.Spinner className="spinner" animation="border" />
-          ) : (
-            book.reviews.map((data) => {
-              <Reviews name={data.reviewer.fullName} text={data.review} />;
+          ) : reviews ? (
+            reviews.map((data) => {
+              return (
+                <Reviews
+                  name={data.reviewer.fullName}
+                  review={data.review}
+                  rate={data.rate}
+                />
+              );
             })
-          )}
+          ) : null}
         </div>
       </Modal.Body>
       <Modal.Footer>

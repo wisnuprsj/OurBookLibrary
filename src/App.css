@@ -237,6 +237,17 @@ body {
   display: inline-block;
 }
 
+/* REVIEW */
+
+.all-review {
+  overflow: scroll;
+  height: 400px;
+}
+
+.fa-star {
+  color: #ffe227;
+}
+
 @media only screen and (min-width: 1024px) {
   :root {
     --columns: 7;

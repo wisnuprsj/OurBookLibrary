@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import BookM from "../Modals/BookM";
-import env from "react-dotenv";
+// import env from "react-dotenv";
 
 function Collection() {
   const [listBooks, setListBooks] = useState([]);
@@ -24,7 +24,7 @@ function Collection() {
     setLoading(true);
     getAllBookCollection(startIndex, endIndex);
     getAllBooks();
-  }, []);
+  }, [startIndex, endIndex]);
 
   const handleClickImg = async (event) => {
     let dataId = event.target.getAttribute("data-id");
@@ -349,7 +349,11 @@ function Collection() {
                 <li
                   className={`page-item ${startIndex === 0 ? "disabled" : ""}`}
                 >
-                  <a className="page-link" href="#" onClick={handlePrevPage}>
+                  <a
+                    className="page-link"
+                    href="javascript:;"
+                    onClick={handlePrevPage}
+                  >
                     &laquo;
                   </a>
                 </li>
@@ -358,7 +362,11 @@ function Collection() {
                     endIndex < maxDocument ? "" : "disabled"
                   }`}
                 >
-                  <a className="page-link" href="#" onClick={handleNextPage}>
+                  <a
+                    className="page-link"
+                    href="javascript:;"
+                    onClick={handleNextPage}
+                  >
                     &raquo;
                   </a>
                 </li>

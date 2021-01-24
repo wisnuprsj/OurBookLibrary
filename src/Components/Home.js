@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as ReactBootstrap from "react-bootstrap";
-import env from "react-dotenv";
+// import env from "react-dotenv";
 
 function Home() {
   const [genres, setGenres] = useState([]);
